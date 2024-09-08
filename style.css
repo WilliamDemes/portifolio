@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --cor-primaria: #000000;
+    --cor-secundaria: #F6F6F6;
+    --cor-terciaria: #22D4FD;
+    --cor-hover: #272727;
+
+    --fonte-primaria: "Krona One", sans-serif;
+    --fonte-secundaria: "Montserrat", sans-serif;
+}
+
+* {
+    margin: 0; /*Zera a margem da tela*/
+    padding: 0;
+}
+
+body {
+    /*height: 100vh; /*Determina o tamanho da tela que será 100% do viewport*/
+    box-sizing: border-box; /*Garante que elementos filhos não saiam da tag pai*/
+    background-color: var(--cor-primaria); /*Cor de fundo da página*/
+    color: var(--cor-secundaria); /*Cor de fundo da fonte*/
+}
+
+.cabecalho {
+    padding: 2% 0% 0% 15%;
+}
+
+.cabecalho__menu {
+    display: flex;
+    gap: 80px;
+    
+}
+
+.cabecalho__menu__link {
+    font-family: var(--fonte-secundaria);
+    font-size: 1.5rem;
+    color: var(--cor-terciaria);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.titulo-destaque {
+    color: var(--cor-terciaria);
+}
+
+.apresentacao { /*movendo os itens da taga pai main com boxflex*/
+    padding: 5% 15%; /*insere uma margem*/
+    display: flex; /*Coloca todos os itens da tag pai em uma única linha*/
+    align-items: center; /*Centraliza todos os itens de uma tag pai utilizando o maior como referencia */
+    justify-content: space-between; /*Espaça cada elemento filho para os cantos da página*/
+    gap: 82px;
+}
+
+.apresentacao__conteudo {
+    width: 50%; /*Tamanho da caixa de apresentacao__conteudo*/
+    display: flex;
+    flex-direction: column; /*ajuta tudo em uma coluna verificar no chatgpt*/
+    gap: 40px; /* espaçamento padrão entre todos os elementos da tag pai*/
+}
+
+.apresentacao__conteudo__titulo {
+    font-size: 2.25rem;
+    font-family: var(--fonte-primaria);
+}
+
+.apresentacao__conteudo__paragrafo {
+    font-size: 1.5rem;
+    font-family: var(--fonte-secundaria);
+}
+
+.apresentacao__links {
+    display: flex; /*Com flex box sempre iniciamos com display flex, que coloca tudo em uma única linha*/
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 32px;
+    align-items: center;
+}
+
+.apresentacao__links__navegacao {
+    /*background-color: #22D4FD; /*cor de fundo*/
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    width: 50%; /* largura*/
+    text-align: center; /*alinhamento do texto*/
+    border-radius: 8px; /*Raio de arredondamento da borda*/
+    font-size: 1.5rem; /*Tamanho da fonte*/
+    padding: 21.5px 0px; /*Altura entre o conteúdo e a borda com valor 21.5px para o eixo vertical e 0px para o horizontal*/
+    text-decoration: none; /*retira toda a decoração inicial do texto*/
+    color: var(--cor-secundaria); /*Cor do texto do botão*/
+    font-family: var(--fonte-secundaria);
+    font-weight: 600; /*Peso da fonte*/
+    border: 2px solid var(--cor-terciaria);
+}
+
+.apresentacao__links__link:hover {
+    background-color: var(--cor-hover);
+    color:gold;
+    padding: 3%;
+}
+
+.apresentacao__links__subtitulo {
+    font-family: var(--fonte-primaria);
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+
+.rodape {
+    background-color: var(--cor-terciaria);
+    color: var(--cor-primaria);
+    font-family: var(--fonte-secundaria);
+    font-weight: 400;
+    font-size: 1.5rem;
+    padding: 23.64px;
+    text-align: center;
+}
+
+.apresentacao__imagem {
+    width: 50%;
+}
+
+@media (max-width: 1200px) { /*Esta função permite aplicarmos outras formatação e tamanhos a partir de um tamanho de tela máximo.*/
+    .cabecalho {
+        padding: 10%;
+    }
+
+    .cabecalho__menu {
+        justify-content: center;
+    }
+
+    .apresentacao {
+        flex-direction: column-reverse; /*Muda os itens de lugar na tela, colocando na sequência reversa*/
+        padding: 5%;
+    }
+
+    .apresentacao__conteudo {
+        width: auto;
+    }
+}
